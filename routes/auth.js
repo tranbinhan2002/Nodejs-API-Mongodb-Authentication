@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controller/userController");
-const verify = require('../verifytoken/verifiedToken');
+const verify = require('../authenticate/verifiedToken');
 
 
-//register
-router.post("/register", userController.register);
-//loginnpm 
+//Register
+router.post("/register",userController.register);
+//Login
 router.post("/login", userController.login);
-//Select user
+//Get user
 router.get("/", verify, userController.indexUser);
-//delete user
+//Delete user
 router.delete('/:id', verify, userController.deleteUser);
-//edit user
-router.put('/:id', verify, userController.editUser);
+//Edit user
+router.put('/:id', verify,userController.editUser);
 
 
 module.exports = router;

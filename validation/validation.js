@@ -28,7 +28,10 @@ const editValidation = data => {
     return Joi.validate(data,schema);
 }
 
-module.exports.registerValidation = registerValidation;
-module.exports.loginValidation = loginValidation;
-module.exports.editValidation = editValidation;
+module.exports = {
+    registerValidation,
+    loginValidation,
+    editValidation
+};
+
 
